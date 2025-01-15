@@ -48,3 +48,12 @@ Inside a table, a column often contains many duplicate values; and sometimes you
 SELECT DISTINCT column1, column2, ...
 FROM table_name;
 ```
+
+## SQL WHERE Clause
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition.
+```
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
