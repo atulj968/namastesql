@@ -20,6 +20,32 @@ SQL keywords are NOT case sensitive: select is the same as SELECT
 Some database systems require a semicolon at the end of each SQL statement.
 Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
 
+## SQL CREATE DATABASE
+The CREATE DATABASE statement is a foundational SQL command used to create new databases in SQL-based Database Management Systems (DBMS), including MySQL, PostgreSQL, SQL Server, and others. Understanding how to use this command effectively is crucial for developers, database administrators, and anyone working with relational databases.
+
+### CREATE DATABASE in SQL
+The CREATE DATABASE command establishes a new database within your SQL ecosystem. A database is a repository that organizes data in structured formats through tables, views, stored procedures, and other components.
+The syntax to use the CREATE DATABASE command in SQL is:
+```
+CREATE DATABASE database_name;
+```
+### List Databases in SQL
+we will verify whether the new database that we have just created has been successfully added to our system or not. 
+We use the SHOW DATABASES command and it will return a list of databases that exist in our system.
+```
+SHOW DATABASES;
+```
+### USE Database in SQL
+Once your database is created, we can switch to that database to begin adding tables, inserting data, and performing queries. To do this, use the USE command.
+```
+USE database_name
+```
+### Delete a Database in SQL
+If you ever need to remove a database, the DROP DATABASE command can be used to delete the database and all its contents:
+```
+DROP DATABASE database_name;
+```
+
 ## Some of The Most Important SQL Commands
 ```
 SELECT - extracts data from a database
