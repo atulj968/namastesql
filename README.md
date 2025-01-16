@@ -46,6 +46,10 @@ If you ever need to remove a database, the DROP DATABASE command can be used to 
 DROP DATABASE database_name;
 ```
 
+```
+Note : I am using DBeaver, so for inserting multiline data you have to run query as script (alt+x).
+```
+
 ## Some of The Most Important SQL Commands
 ```
 SELECT - extracts data from a database
