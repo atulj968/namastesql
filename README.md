@@ -45,6 +45,29 @@ If you ever need to remove a database, the DROP DATABASE command can be used to 
 ```
 DROP DATABASE database_name;
 ```
+### Rename Database
+To change the name of a database in SQL, use the syntax:
+```
+ALTER DATABASE [current_database_name]
+MODIFY NAME = [new_database_name];
+```
+To rename a database in MySQL use the query:
+```
+RENAME DATABASE [current_database_name] TO [new_database_name];
+```
+
+## CREATE TABLE
+The SQL CREATE TABLE statement is a foundational command used to define and structure a new table in a database. By specifying the columns, data types, and constraints such as PRIMARY KEY, NOT NULL, and CHECK, helps you design the database schema.  A table’s structure, including column names, data types, and constraints like NOT NULL, PRIMARY KEY, and CHECK, are defined when it is created in SQL.
+```
+CREATE table table_name
+(
+Column1 datatype (size),
+column2 datatype (size),
+.
+.
+columnN datatype(size)
+);
+```
 
 ```
 Note : I am using DBeaver, so for inserting multiline data you have to run query as script (alt+x).
