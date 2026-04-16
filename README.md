@@ -124,3 +124,225 @@ BETWEEN	        Between a certain range
 LIKE	        Search for a pattern	
 IN	        To specify multiple possible values for a column
 ```
+
+## Day 5 – SQL Concepts (Joins, Aggregation, Filtering Groups)
+
+In this section, we focus on important SQL concepts used to solve real-world business problems involving multiple tables, aggregations, and conditional filtering.
+
+---
+
+### 🔗 JOINS in SQL
+
+SQL Joins are used to combine data from two or more tables based on a related column.
+
+#### 1. INNER JOIN
+
+* Returns only the matching records from both tables.
+* Used when we need data that exists in both tables.
+
+Syntax:
+
+```
+SELECT columns
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+```
+
+---
+
+#### 2. LEFT JOIN
+
+* Returns all records from the left table and matched records from the right table.
+* If no match is found, NULL values are returned for the right table.
+
+Syntax:
+
+```
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+```
+
+---
+
+### 📊 AGGREGATE FUNCTIONS
+
+Aggregate functions perform calculations on multiple rows and return a single value.
+
+Common aggregate functions:
+
+* `COUNT()` → Counts number of rows
+* `SUM()` → Adds values
+* `AVG()` → Calculates average
+* `DISTINCT` → Removes duplicate values inside aggregates
+
+Example:
+
+```
+SELECT COUNT(column_name), SUM(column_name), AVG(column_name)
+FROM table_name;
+```
+
+---
+
+### 🧮 GROUP BY
+
+* Used to group rows that have the same values into summary rows.
+* Commonly used with aggregate functions.
+
+Syntax:
+
+```
+SELECT column, aggregate_function(column)
+FROM table_name
+GROUP BY column;
+```
+
+---
+
+### 🎯 HAVING CLAUSE
+
+* Used to filter grouped data (after aggregation).
+* Works like WHERE but for grouped results.
+
+Syntax:
+
+```
+SELECT column, aggregate_function(column)
+FROM table_name
+GROUP BY column
+HAVING condition;
+```
+
+---
+
+### 🔍 COUNT vs COUNT(DISTINCT)
+
+* `COUNT(column)` → counts all non-null values
+* `COUNT(DISTINCT column)` → counts unique values
+
+Used when we need to check uniqueness within groups.
+
+---
+
+### ❌ HANDLING NULL VALUES
+
+* NULL represents missing or unmatched data.
+* Often used with LEFT JOIN to find missing records.
+
+Example:
+
+```
+WHERE table2.column IS NULL
+```
+
+Used to identify:
+
+* Non-matching records
+* Missing relationships
+* Data absence
+
+---
+
+### 🚫 ANTI JOIN (Using LEFT JOIN + NULL)
+
+* Used to find records that do NOT have a match in another table.
+* Implemented using LEFT JOIN and filtering NULL values.
+
+Concept:
+
+```
+LEFT JOIN + WHERE right_table.column IS NULL
+```
+
+---
+
+### 🔄 DISTINCT WITHIN GROUPS
+
+* Used inside aggregate functions to count or evaluate unique values within each group.
+
+Example:
+
+```
+COUNT(DISTINCT column)
+```
+
+Helps in:
+
+* Checking uniqueness
+* Validating conditions like “all types exist”
+
+---
+
+### 🏆 SORTING RESULTS
+
+Used to arrange output in ascending or descending order.
+
+Syntax:
+
+```
+ORDER BY column ASC|DESC;
+```
+
+---
+
+### 🔝 LIMITING RESULTS
+
+Used to restrict number of rows returned.
+
+* In SQL Server: `TOP`
+* In MySQL/PostgreSQL: `LIMIT`
+
+Example:
+
+```
+SELECT TOP 3 column
+FROM table
+ORDER BY column DESC;
+```
+
+---
+
+### 🎯 FILTERING DATA BEFORE GROUPING
+
+* Using WHERE clause before GROUP BY to limit rows for aggregation.
+
+Example:
+
+```
+SELECT column, SUM(column2)
+FROM table
+WHERE condition
+GROUP BY column;
+```
+
+---
+
+### 🧩 COMBINING MULTIPLE CONCEPTS
+
+Real-world queries often combine:
+
+* JOINS
+* WHERE filtering
+* GROUP BY
+* HAVING
+* ORDER BY
+
+Understanding how these work together is key to solving complex SQL problems.
+
+---
+
+### ⚡ Key Takeaways
+
+* Use **INNER JOIN** for matching data
+* Use **LEFT JOIN + NULL** for missing data detection
+* Use **GROUP BY + AGGREGATE** for summaries
+* Use **HAVING** to filter grouped results
+* Use **DISTINCT** to handle uniqueness
+* Use **ORDER BY + TOP/LIMIT** for ranking
+
+---
+
+This section builds the foundation for solving advanced SQL problems and interview-level questions.
