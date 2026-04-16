@@ -131,7 +131,7 @@ In this section, we focus on important SQL concepts used to solve real-world bus
 
 ---
 
-### 🔗 JOINS in SQL
+### JOINS in SQL
 
 SQL Joins are used to combine data from two or more tables based on a related column.
 
@@ -167,7 +167,7 @@ ON table1.column = table2.column;
 
 ---
 
-### 📊 AGGREGATE FUNCTIONS
+### AGGREGATE FUNCTIONS
 
 Aggregate functions perform calculations on multiple rows and return a single value.
 
@@ -187,7 +187,7 @@ FROM table_name;
 
 ---
 
-### 🧮 GROUP BY
+### GROUP BY
 
 * Used to group rows that have the same values into summary rows.
 * Commonly used with aggregate functions.
@@ -202,7 +202,7 @@ GROUP BY column;
 
 ---
 
-### 🎯 HAVING CLAUSE
+### HAVING CLAUSE
 
 * Used to filter grouped data (after aggregation).
 * Works like WHERE but for grouped results.
@@ -218,7 +218,7 @@ HAVING condition;
 
 ---
 
-### 🔍 COUNT vs COUNT(DISTINCT)
+### COUNT vs COUNT(DISTINCT)
 
 * `COUNT(column)` → counts all non-null values
 * `COUNT(DISTINCT column)` → counts unique values
@@ -227,7 +227,7 @@ Used when we need to check uniqueness within groups.
 
 ---
 
-### ❌ HANDLING NULL VALUES
+### HANDLING NULL VALUES
 
 * NULL represents missing or unmatched data.
 * Often used with LEFT JOIN to find missing records.
@@ -246,7 +246,7 @@ Used to identify:
 
 ---
 
-### 🚫 ANTI JOIN (Using LEFT JOIN + NULL)
+### ANTI JOIN (Using LEFT JOIN + NULL)
 
 * Used to find records that do NOT have a match in another table.
 * Implemented using LEFT JOIN and filtering NULL values.
@@ -259,7 +259,7 @@ LEFT JOIN + WHERE right_table.column IS NULL
 
 ---
 
-### 🔄 DISTINCT WITHIN GROUPS
+### DISTINCT WITHIN GROUPS
 
 * Used inside aggregate functions to count or evaluate unique values within each group.
 
@@ -276,7 +276,7 @@ Helps in:
 
 ---
 
-### 🏆 SORTING RESULTS
+### SORTING RESULTS
 
 Used to arrange output in ascending or descending order.
 
@@ -288,7 +288,7 @@ ORDER BY column ASC|DESC;
 
 ---
 
-### 🔝 LIMITING RESULTS
+### LIMITING RESULTS
 
 Used to restrict number of rows returned.
 
@@ -305,7 +305,7 @@ ORDER BY column DESC;
 
 ---
 
-### 🎯 FILTERING DATA BEFORE GROUPING
+### FILTERING DATA BEFORE GROUPING
 
 * Using WHERE clause before GROUP BY to limit rows for aggregation.
 
@@ -320,7 +320,7 @@ GROUP BY column;
 
 ---
 
-### 🧩 COMBINING MULTIPLE CONCEPTS
+### COMBINING MULTIPLE CONCEPTS
 
 Real-world queries often combine:
 
@@ -334,7 +334,7 @@ Understanding how these work together is key to solving complex SQL problems.
 
 ---
 
-### ⚡ Key Takeaways
+### Key Takeaways
 
 * Use **INNER JOIN** for matching data
 * Use **LEFT JOIN + NULL** for missing data detection
